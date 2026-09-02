@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: pos-admin-panel
+  name: pos-admin-panel
+  namespace: pos-admin-panel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pos-admin-panel
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: pos-admin-panel
+    spec:
+      containers:
+      - image: spideyshine/admin-panel-with-nodejs
+        name: admin-panel-with-nodejs
+        resources: {}
+status: {}
